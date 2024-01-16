@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:counter_app/Todo_app/ui/todo_screen/todo_screen,.dart';
+import 'package:counter_app/Todo_app/bloc/todo_bloc.dart';
+import 'package:counter_app/Todo_app/ui/todo_screen/todo_screen.dart';
 import 'package:counter_app/counter_app/bloc/counter_bloc.dart';
 import 'package:counter_app/counter_app/ui/counter_screen.dart';
 import 'package:counter_app/image_picker/bloc/image_picker_bloc.dart';
@@ -27,13 +28,14 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(create: (context) => SwitchBloc()),
         BlocProvider(create: (context) => ImagePickerBloc(ImagePickerUtils())),
+        BlocProvider(create: (context) => TodoBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: TodoScreen(),
+        home: TodoAppScreen(),
       ),
     );
   }

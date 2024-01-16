@@ -1,11 +1,10 @@
 import 'package:bloc/bloc.dart';
+import 'package:counter_app/Todo_app/bloc/todo_event.dart';
+import 'package:counter_app/Todo_app/bloc/todo_state.dart';
 import 'package:equatable/equatable.dart';
 
-part 'todo_event.dart';
-part 'todo_state.dart';
-
 class TodoBloc extends Bloc<TodoEvent, TodoState> {
-  TodoBloc() : super(TodoInitial()) {
+  TodoBloc() : super(const TodoState()) {
     on<TodoEvent>((event, emit) {
       // TODO: implement event handler
     });

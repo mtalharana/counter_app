@@ -1,10 +1,11 @@
-part of 'todo_bloc.dart';
+import 'package:equatable/equatable.dart';
 
-sealed class TodoState extends Equatable {
-  const TodoState();
-  
+class TodoState extends Equatable {
+  final List<String> todos;
+  const TodoState({
+    this.todos = const <String>[],
+  });
+
   @override
-  List<Object> get props => [];
+  List<Object> get props => [todos];
 }
-
-final class TodoInitial extends TodoState {}
